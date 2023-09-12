@@ -9,13 +9,13 @@ Vue.use(elementUI)
 import Select from './src/element-ui/select'
 import TableList from './src/element-ui/table-list'
 import TextEllipsis from './src/element-ui/text-ellipsis'
-import DateRangePicker from '.src/element-ui/date-range-picker/src/DateRangePicker'
+// import DateRangePicker from '.src/element-ui/date-range-picker/src/DateRangePicker'
 // import SearchForm from '.src/element-ui/search-form/src/SearchForm'
 // import CacheInput from './src/element-ui/cache-input'
 
 
 const components = [
-	DateRangePicker,
+	// DateRangePicker,
 	Select,
 	// SearchForm,
 	TextEllipsis,
@@ -31,7 +31,7 @@ function install(Vue) {
 export default {
 	version: '1.0.1',
 	install,
-	DateRangePicker,
+	// DateRangePicker,
 	Select,
 	// SearchForm,
 	TextEllipsis,
