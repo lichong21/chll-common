@@ -44,7 +44,7 @@
 <script>
 import ClSelect from '../../select/src/Select.vue'
 import ClDateRangePicker from '../../date-range-picker/src/DateRangePicker.vue'
-import { FORM_ITEM_TYPE } from '@/utils/config'
+import { FORM_ITEM_TYPE } from './config'
 
 export default {
 	name: 'ClSearchForm',
