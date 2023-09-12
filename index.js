@@ -23,9 +23,11 @@ const components = [
 ]
 
 function install(Vue) {
+	console.log('Installing')
 	components.forEach(component => {
 		Vue.component(component.name, component)
 	})
+	console.log('Install completed successfully')
 }
 
 export default {

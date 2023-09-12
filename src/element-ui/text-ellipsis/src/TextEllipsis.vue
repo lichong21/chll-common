@@ -11,7 +11,7 @@
 
 <script>
 export default {
-	name: 'ClTextEllipsus',
+	name: 'ClTextEllipsis',
   props: {
     value: {
       type: String | Number,
