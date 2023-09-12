@@ -11,7 +11,7 @@ import TableList from './src/element-ui/table-list'
 import TextEllipsis from './src/element-ui/text-ellipsis'
 import DateRangePicker from '.src/element-ui/date-range-picker'
 import SearchForm from '.src/element-ui/search-form'
-import CacheInput from './src/element-ui/cache-input'
+// import CacheInput from './src/element-ui/cache-input'
 
 
 const components = [
@@ -20,7 +20,6 @@ const components = [
 	SearchForm,
 	TextEllipsis,
 	TableList,
-	CacheInput
 ]
 
 function install(Vue) {
@@ -37,5 +36,4 @@ export default {
 	SearchForm,
 	TextEllipsis,
 	TableList,
-	CacheInput
 }
