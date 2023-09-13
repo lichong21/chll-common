@@ -101,6 +101,49 @@ options: [
 ---
 
 ## SearchForm
+> 基于el-form和表单其他项封装的组件，主要作用是填充后台查询模块的查询表单。目前支持Input、Select和 DateRangePicker等三个类型的项，后续会不断的扩充。
+### 参数解读
+| prop | 类型 | 默认值 | 说明
+|--|--|--|--|
+|value| {} | 必填 | 表单的双向绑定值
+| formFields | {} | 必填 | 查询项的配置
+| formRules | {} | 非必填 | 表单的校验
+|  boforeSubmit | Fn | 非必填 | 点击查询，触发请求之前的表单自定义校验
+
+### 使用方式
+```
+<KFSearchForm
+	v-model="searchForm"
+	:formFields="formFields"
+	@search="queryTableData"
+	@reset="resetTable"
+/>
+```
 
 ---
 ## TableList
+> 基于原生的el-table组件，结合了el-paginaion功能。支持表格列的配置和、请求参数的构造、请求发起时的loading、响应值的处理和翻页等功能。是一个高集成的功能强大的组件,支持自定义表格数据和表格头。
+
+### 参数解读  - prop
+| prop | 类型 | 默认值 | 说明
+|--|--|--|--|
+tableConfig|对象 | {data: [], columnList: [], total: null, laoding: false} | data:是表格要渲染数据的集；columnList：代表表格列的配置项；total：代表当前查询条件下的数据总数；loading：代表表格查询时的加载状态
+| pageConfig| | {pageSizes:[100, 200, 300, 400],pageSize: 100} | 翻页配置项
+|requestFn| Fn | 非必填 | 请求方法
+|requestParams| {} | 非必填 | 请求方法的参数
+|handleResponseFn| Fn| 非必填 | 处理返回值的方案
+|……||||
+
+### 使用方式
+```
+<TableCom
+	ref="tableRef"
+	:tableConfig="tableConfig"
+	:requestFn="getLogOffList"
+	:requestParams="buildSearchFormParams()"
+	:pageConfig="pageConfig"
+	selection
+	:selectable="filterSelectableRow"
+	@selectionChange="handleSelectionChange"
+>
+```
