@@ -147,3 +147,17 @@ tableConfig|对象 | {data: [], columnList: [], total: null, laoding: false} | d
 	@selectionChange="handleSelectionChange"
 >
 ```
+---
+## TransitionCollpase
+> 基于Vue原生的transition组件，利用transition的钩子函数，在动画的不同阶段调整元素的transition-property属性，实现了折叠效果。目前只支持上下折叠，左右折叠的实现啊原理相同。具体来说，就是
+> - 在before-enter的阶段: 记录元素的paddingTop、paddingBottom的值和并重置为0
+> - 在enter-active的阶段：设置元素的paddingTop、paddingBottom为原始值，记录overflow的原始值然后设置为hidden
+> - 在after-enter的阶段：恢复元素的overflow原始值
+> - 在before-leave的阶段：记录元素的paddingTop、paddingBottom的值和overflow为hidden
+> - 在leave-active的阶段：设置元素的paddingTop、paddingBottom为0
+> - 在after-leave的阶段：恢复元素的paddingTop、paddingBottom为原始值，并设置overflow为原始值
+```
+<TransitionCollpase>
+	slot
+</TransitionCollpase>
+```
